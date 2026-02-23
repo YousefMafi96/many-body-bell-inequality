@@ -16,8 +16,8 @@ for i in range(1, 9):
     errors = np.random.uniform(0.5, 2, 4)
     data[f"Dataset {i}"] = {"mean": means, "error": errors}
 
-# ---- Layout: Two Columns ----
-col1, col2 = st.columns([1, 3])  # left small, right big
+# ---- Layout ----
+col1, col2 = st.columns([1, 3])
 
 # ---- LEFT: Dataset Selection ----
 with col1:
@@ -37,49 +37,49 @@ with col2:
             name=name,
             x=categories,
             y=data[name]["mean"],
-            error_y=dict(
-                type='data',
-                array=data[name]["error"]
-            )
+            error_y=dict(type='data', array=data[name]["error"])
         ))
 
+    # ---- Fixed size ----
     fig.update_layout(
+        width=800,   # fixed width in pixels
+        height=600,  # fixed height in pixels
         barmode='group',
 
         # White background
         plot_bgcolor='white',
         paper_bgcolor='white',
 
-        # LaTeX labels
-        xaxis_title=r"$\mathrm{Category}$",
-        yaxis_title=r"$\mathrm{Value\ (units)}$",
+        # Axis labels in LaTeX-style (Plotly uses $...$)
+        xaxis_title="$\\mathrm{Category}$",
+        yaxis_title="$\\mathrm{Value\ (units)}$",
 
-        # Global font
+        # Font styling
         font=dict(
             family="Arial",
-            size=18,
+            size=16,
             color="black"
         ),
 
-        # Axis styling
+        # Axis line styling
         xaxis=dict(
             showline=True,
             linewidth=2,
             linecolor='black',
             mirror=True,
-            ticks='outside'
+            ticks='outside',
+            tickfont=dict(size=14)
         ),
         yaxis=dict(
             showline=True,
             linewidth=2,
             linecolor='black',
             mirror=True,
-            ticks='outside'
+            ticks='outside',
+            tickfont=dict(size=14)
         ),
 
-        legend=dict(
-            font=dict(size=14)
-        )
+        legend=dict(font=dict(size=14))
     )
 
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, use_container_width=False)  # use fixed size, not container width
