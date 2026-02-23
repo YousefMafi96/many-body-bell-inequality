@@ -2,7 +2,10 @@ import streamlit as st
 import plotly.graph_objects as go
 import numpy as np
 
-st.title("Bar Plot with Error Bars (Selectable)")
+# Force white background
+st.set_page_config(layout="wide")
+
+st.title("Bell Inequality value")
 
 categories = ["A", "B", "C", "D"]
 
@@ -30,5 +33,45 @@ for name in selected:
         error_y=dict(type='data', array=data[name]["error"])
     ))
 
-fig.update_layout(barmode='group')
-st.plotly_chart(fig)
+fig.update_layout(
+    barmode='group',
+
+    # White background
+    plot_bgcolor='white',
+    paper_bgcolor='white',
+
+    # Axis labels with LaTeX
+    xaxis_title=r"$\mathrm{Category}$",
+    yaxis_title=r"$\mathrm{Value\ (units)}$",
+
+    # Font customization
+    font=dict(
+        family="Arial",
+        size=18,
+        color="black"
+    ),
+
+    # Axis styling
+    xaxis=dict(
+        showline=True,
+        linewidth=2,
+        linecolor='black',
+        mirror=True,
+        ticks='outside',
+        tickfont=dict(size=16)
+    ),
+    yaxis=dict(
+        showline=True,
+        linewidth=2,
+        linecolor='black',
+        mirror=True,
+        ticks='outside',
+        tickfont=dict(size=16)
+    ),
+
+    legend=dict(
+        font=dict(size=16)
+    )
+)
+
+st.plotly_chart(fig, use_container_width=True)
