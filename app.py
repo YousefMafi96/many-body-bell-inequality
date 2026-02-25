@@ -59,7 +59,7 @@ with col2:
         # Font styling
         font=dict(
             family="Arial",
-            size=24,
+            size=60,
             color="black"
         ),
 
@@ -85,6 +85,7 @@ with col2:
     )
 
     st.plotly_chart(fig, use_container_width=False)  # use fixed size, not container width
+
 
 
 
