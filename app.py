@@ -80,7 +80,8 @@ with col2:
         legend=dict(font=dict(size=14))
     )
     
-    st.plotly_chart(fig, use_container_width=False)
+    st.plotly_chart(fig, use_container_width=True)
+
 
 
 
