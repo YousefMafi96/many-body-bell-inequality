@@ -43,48 +43,45 @@ with col2:
         ))
 
     # ---- Fixed size ----
-    fig.update_layout(
-        width=800,   # fixed width in pixels
-        height=600,  # fixed height in pixels
-        barmode='group',
+fig.update_layout(
+    width=800,
+    height=600,
+    barmode='group',
 
-        # White background
-        plot_bgcolor='white',
-        paper_bgcolor='white',
+    plot_bgcolor='white',
+    paper_bgcolor='white',
 
-        # Axis labels in LaTeX-style (Plotly uses $...$)
-        xaxis_title="n",
-        yaxis_title="Id",
+    # Axis titles
+    xaxis_title="n",
+    yaxis_title="Id",
 
-        # Font styling
-        font=dict(
-            family="Arial",
-            size=60,
-            color="black"
-        ),
+    # 🔥 Explicit axis title font control
+    xaxis_title_font=dict(size=28, family="Arial", color="black"),
+    yaxis_title_font=dict(size=28, family="Arial", color="black"),
 
-        # Axis line styling
-        xaxis=dict(
-            showline=True,
-            linewidth=2,
-            linecolor='black',
-            mirror=True,
-            ticks='outside',
-            tickfont=dict(size=18)
-        ),
-        yaxis=dict(
-            showline=True,
-            linewidth=2,
-            linecolor='black',
-            mirror=True,
-            ticks='outside',
-            tickfont=dict(size=18)
-        ),
+    # Tick label size (numbers on axis)
+    xaxis=dict(
+        showline=True,
+        linewidth=2,
+        linecolor='black',
+        mirror=True,
+        ticks='outside',
+        tickfont=dict(size=18)
+    ),
+    yaxis=dict(
+        showline=True,
+        linewidth=2,
+        linecolor='black',
+        mirror=True,
+        ticks='outside',
+        tickfont=dict(size=18)
+    ),
 
-        legend=dict(font=dict(size=14))
-    )
+    legend=dict(font=dict(size=14))
+)
 
     st.plotly_chart(fig, use_container_width=False)  # use fixed size, not container width
+
 
 
 
