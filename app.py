@@ -4,7 +4,7 @@ import numpy as np
 
 st.set_page_config(layout="wide")
 
-st.title("Bar Plot with Error Bars")
+st.title("Bell's Inequality results")
 
 # ---- Data ----
 categories = ["1", "2", "3", "4", "5", "6"]
@@ -23,7 +23,7 @@ col1, col2 = st.columns([1, 3])
 
 # ---- LEFT: Dataset Selection ----
 with col1:
-    st.subheader("Select Datasets")
+    st.subheader("Data")
     selected_data = []
 
     for name in data.keys():
@@ -81,6 +81,7 @@ with col2:
     )
     
     st.plotly_chart(fig, use_container_width=True)
+
 
 
 
