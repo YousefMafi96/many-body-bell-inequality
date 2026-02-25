@@ -43,44 +43,45 @@ with col2:
         ))
 
     # ---- Fixed size ----
-fig.update_layout(
-    # width=800,
-    height=600,
-    barmode='group',
+    fig.update_layout(
+        width=800,
+        height=600,
+        barmode='group',
+    
+        plot_bgcolor='white',
+        paper_bgcolor='white',
+    
+        # Axis titles
+        xaxis_title="n",
+        yaxis_title="Id",
+    
+        # 🔥 Explicit axis title font control
+        xaxis_title_font=dict(size=18, family="Arial", color="black"),
+        yaxis_title_font=dict(size=18, family="Arial", color="black"),
+    
+        # Tick label size (numbers on axis)
+        xaxis=dict(
+            showline=True,
+            linewidth=2,
+            linecolor='black',
+            mirror=True,
+            ticks='outside',
+            tickfont=dict(size=18)
+        ),
+        yaxis=dict(
+            showline=True,
+            linewidth=2,
+            linecolor='black',
+            mirror=True,
+            ticks='outside',
+            tickfont=dict(size=18)
+        ),
+    
+        legend=dict(font=dict(size=14))
+    )
+    
+    st.plotly_chart(fig, use_container_width=False)
 
-    plot_bgcolor='white',
-    paper_bgcolor='white',
-
-    # Axis titles
-    xaxis_title="n",
-    yaxis_title="Id",
-
-    # 🔥 Explicit axis title font control
-    xaxis_title_font=dict(size=18, family="Arial", color="black"),
-    yaxis_title_font=dict(size=18, family="Arial", color="black"),
-
-    # Tick label size (numbers on axis)
-    xaxis=dict(
-        showline=True,
-        linewidth=2,
-        linecolor='black',
-        mirror=True,
-        ticks='outside',
-        tickfont=dict(size=18)
-    ),
-    yaxis=dict(
-        showline=True,
-        linewidth=2,
-        linecolor='black',
-        mirror=True,
-        ticks='outside',
-        tickfont=dict(size=18)
-    ),
-
-    legend=dict(font=dict(size=14))
-)
-
-st.plotly_chart(fig, use_container_width=True)
 
 
 
