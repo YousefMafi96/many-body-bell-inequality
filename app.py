@@ -27,7 +27,7 @@ with col1:
     selected_data = []
 
     for name in data.keys():
-        if st.checkbox(name in default_selected):
+        if st.checkbox(name, value=(name in default_selected)):
             selected_data.append(name)
 
 # ---- RIGHT: Plot ----
@@ -81,6 +81,7 @@ with col2:
     )
     
     st.plotly_chart(fig, use_container_width=True)
+
 
 
 
