@@ -44,8 +44,8 @@ with col2:
 
     # ---- Fixed size ----
 fig.update_layout(
-    width=600,
-    height=400,
+    width=800,
+    height=600,
     barmode='group',
 
     plot_bgcolor='white',
@@ -56,8 +56,8 @@ fig.update_layout(
     yaxis_title="Id",
 
     # 🔥 Explicit axis title font control
-    xaxis_title_font=dict(size=28, family="Arial", color="black"),
-    yaxis_title_font=dict(size=28, family="Arial", color="black"),
+    xaxis_title_font=dict(size=18, family="Arial", color="black"),
+    yaxis_title_font=dict(size=18, family="Arial", color="black"),
 
     # Tick label size (numbers on axis)
     xaxis=dict(
@@ -81,6 +81,7 @@ fig.update_layout(
 )
 
 st.plotly_chart(fig, use_container_width=False)
+
 
 
 
