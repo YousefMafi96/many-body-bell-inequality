@@ -53,13 +53,13 @@ with col2:
         paper_bgcolor='white',
 
         # Axis labels in LaTeX-style (Plotly uses $...$)
-        xaxis_title=r"$n$",
-        yaxis_title=r"$I_d$",
+        xaxis_title="n",
+        yaxis_title="Id",
 
         # Font styling
         font=dict(
             family="Arial",
-            size=16,
+            size=24,
             color="black"
         ),
 
@@ -70,7 +70,7 @@ with col2:
             linecolor='black',
             mirror=True,
             ticks='outside',
-            tickfont=dict(size=14)
+            tickfont=dict(size=18)
         ),
         yaxis=dict(
             showline=True,
@@ -78,12 +78,13 @@ with col2:
             linecolor='black',
             mirror=True,
             ticks='outside',
-            tickfont=dict(size=14)
+            tickfont=dict(size=18)
         ),
 
         legend=dict(font=dict(size=14))
     )
 
     st.plotly_chart(fig, use_container_width=False)  # use fixed size, not container width
+
 
 
