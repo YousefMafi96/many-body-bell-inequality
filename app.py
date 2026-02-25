@@ -80,7 +80,7 @@ fig.update_layout(
     legend=dict(font=dict(size=14))
 )
 
-    st.plotly_chart(fig, use_container_width=False)  # use fixed size, not container width
+st.plotly_chart(fig, use_container_width=False)
 
 
 
