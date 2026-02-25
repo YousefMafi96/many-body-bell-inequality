@@ -53,8 +53,8 @@ with col2:
         paper_bgcolor='white',
 
         # Axis labels in LaTeX-style (Plotly uses $...$)
-        xaxis_title="$\\mathrm{Category}$",
-        yaxis_title="$\\mathrm{Value\ (units)}$",
+        xaxis_title=r"$n$",
+        yaxis_title=r"$I_d$",
 
         # Font styling
         font=dict(
@@ -85,4 +85,5 @@ with col2:
     )
 
     st.plotly_chart(fig, use_container_width=False)  # use fixed size, not container width
+
 
