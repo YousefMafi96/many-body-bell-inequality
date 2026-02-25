@@ -44,8 +44,8 @@ with col2:
 
     # ---- Fixed size ----
 fig.update_layout(
-    width=800,
-    height=600,
+    width=600,
+    height=400,
     barmode='group',
 
     plot_bgcolor='white',
@@ -81,6 +81,7 @@ fig.update_layout(
 )
 
 st.plotly_chart(fig, use_container_width=False)
+
 
 
 
