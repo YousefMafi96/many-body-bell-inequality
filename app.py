@@ -18,7 +18,7 @@ data["ibm_torino + EM (QFT)"] = {"mean": [3.387702823,	2.836673297,	2.604488405,
 data["ibm_torino (DQFT)"] = {"mean": [None, 2.61702474,	2.500093006,	2.16023763,	1.961693548,	1.567243304], "error": [0.0,0.0,0.0,0.0,0.0,0.0]}
 data["ibm_torino + EM (DQFT)"] = {"mean": [None, 2.755993798,	2.654109524,	2.387892074,	2.327147454,	1.971485801], "error": [0.0,0.0,0.0,0.0,0.0,0.0]}
 # ---- Layout ----
-
+default_selected = ["Ideal","FakeBackend + EM", "ibm_torino + EM (QFT)", "ibm_torino + EM (DQFT)"]
 col1, col2 = st.columns([1, 3])
 
 # ---- LEFT: Dataset Selection ----
@@ -27,7 +27,7 @@ with col1:
     selected_data = []
 
     for name in data.keys():
-        if st.checkbox(name, value=True):
+        if st.checkbox(name in default_selected):
             selected_data.append(name)
 
 # ---- RIGHT: Plot ----
@@ -81,6 +81,7 @@ with col2:
     )
     
     st.plotly_chart(fig, use_container_width=True)
+
 
 
 
